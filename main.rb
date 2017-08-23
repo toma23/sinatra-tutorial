@@ -3,18 +3,18 @@ require 'sinatra/reloader'
 
 =begin
 get '/hello/:name' do
-     "hello #{params[:name]}"
+  "hello #{params[:name]}"
 end
 
 get '/about' do
-    "about this site page"
+  "about this site page"
 end
 
 get '/hello/:name' do |n|
-    "hello #{n}"
+  "hello #{n}"
 end
 =end
 
-get '/hello/:fname/?:lname?' do |f,l|
-    "hello #{f} #{l}"
+get '/hello/:fname/?:lname?' do |f, l|
+  "hello #{f} #{l}"
 end
