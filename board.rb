@@ -4,10 +4,10 @@ require 'active_record'
 
 ActiveRecord::Base.establish_connection(
     "adapter" => "sqlite3",
-    "database" => "~/sinatra-tutorial/sqlite-tools-win32-x86-3200000/bbs.db"
+    "database" => "~/sqlite-tools-win32-x86-3200000/bbs.db"
 )
 
-class Comments < ActiveRecord::Base
+class Comment < ActiveRecord::Base
 end
 
 get '/' do
