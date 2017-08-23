@@ -7,6 +7,12 @@ ActiveRecord::Base.establish_connection(
     "database" => "./bbs.db"
 )
 
+#エスケープの決まり文句
+helpers do
+    include Rack::Utils
+    alias_method :h, :escape_html   #escape_htmlをhで呼べるようにしてる
+end
+
 class Comment < ActiveRecord::Base
 end
 
@@ -21,6 +27,7 @@ post '/new' do
    redirect '/'
 end
 
+#コメントを削除する
 post '/delete' do
     Comment.find(params[:id]).destroy
  end
