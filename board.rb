@@ -14,3 +14,9 @@ get '/' do
     @comments = Comment.order("id desc").all
     erb :index_db
 end
+
+#ホームに入力された文字を登録
+post '/new' do
+   Comment.create({:body => params[:body]})
+   redirect '/'
+end
