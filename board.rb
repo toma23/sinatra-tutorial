@@ -20,3 +20,7 @@ post '/new' do
    Comment.create({:body => params[:body]})
    redirect '/'
 end
+
+post '/delete' do
+    Comment.find(params[:id]).destroy
+ end
